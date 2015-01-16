@@ -20,12 +20,10 @@ public class RoleServiceImpl implements RoleService {
 	@Autowired
 	private UserDao userDao;
 	
-	@Override
 	public void save(SysRoles record) {
 		sysRolesMapper.insert(record);
 	}
 
-	@Override
 	public void addUserRole(String userId, String roleId) {
 		Map<String, String> record = new HashMap<String, String>();
 		record.put("id", UUIDGenerator.generate());

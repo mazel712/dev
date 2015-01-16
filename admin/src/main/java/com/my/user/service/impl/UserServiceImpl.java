@@ -24,7 +24,6 @@ public class UserServiceImpl implements UserService {
 	@Autowired
 	private SysUsersMapper userMapper;
 
-	@Override
 	public SysUsers findByNameAndPassword(String username, String password) {
 		if (username == null || password == null) {
 			return null;
@@ -39,7 +38,6 @@ public class UserServiceImpl implements UserService {
 		return null;
 	}
 
-	@Override
 	public UserModel findByName(String username) {
 		if (username == null) {
 			return null;
@@ -47,18 +45,15 @@ public class UserServiceImpl implements UserService {
 		return userDao.findByUserName(username);
 	}
 
-	@Override
 	public void save(SysUsers record) {
 		record.setPassword(MD5.encode(record.getPassword()));
 		userMapper.insert(record);
 	}
 
-	@Override
 	public List<MenuModel> getMenuByUser(SysUsers user) {
 		return null;
 	}
 
-	@Override
 	public PageInfo<SysUsers> getPage(int page, int rows) {
 		PageHelper.startPage(page, rows);
 		SysUsersExample example = new SysUsersExample();
@@ -67,7 +62,6 @@ public class UserServiceImpl implements UserService {
 		return pageUser;
 	}
 
-	@Override
 	public void update(SysUsers record) {
 		record.setPassword(MD5.encode(record.getPassword()));
 		userMapper.updateByPrimaryKeySelective(record);

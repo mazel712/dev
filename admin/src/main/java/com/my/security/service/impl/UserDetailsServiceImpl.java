@@ -18,7 +18,6 @@ public class UserDetailsServiceImpl implements UserDetailsService {
 	@Autowired
     private AssemblerService assemblerService;
 
-	@Override
 	public UserDetails loadUserByUsername(String username)
 			throws UsernameNotFoundException {
 		//UserAccount userAccount = userDao.findByUsername(username);

@@ -11,12 +11,10 @@ import com.my.user.model.UserModel;
 @Repository("userDao")
 public class UserDaoImpl extends BaseDaoImpl<UserModel> implements UserDao {
 
-	@Override
 	public UserModel findByUserName(String username) {
 		return getSqlSession().selectOne("UserModel.findByUsername", username);
 	}
 
-	@Override
 	public void addUserRole(Map<String, String> record) {
 		getSqlSession().insert("UserRole.addUserRole", record);
 	}

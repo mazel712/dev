@@ -17,7 +17,6 @@ import com.my.user.model.UserModel;
 public class AssemblerServiceImpl implements AssemblerService {
 
 	@Transactional(readOnly = true)
-	@Override
 	public User buildUserFromUserEntity(UserModel userAccount) {
 		String username = userAccount.getUsername();
 		String password = userAccount.getPassword();

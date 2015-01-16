@@ -11,7 +11,6 @@ import com.my.menu.service.MenuService;
 @Service("menuService")
 public class MenuServiceImpl extends BaseDaoImpl<MenuModel> implements MenuService {
 
-	@Override
 	public List<MenuModel> getMenuByUser(MenuModel model) {
 		return super.findAll(model);
 	}
